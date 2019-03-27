@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  api-node-auth-passport:
+    image: api-node-auth-passport
+    build: .
+    environment:
+      NODE_ENV: dev
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb_service
+  mongodb_service:
+    image: mongo:latest
